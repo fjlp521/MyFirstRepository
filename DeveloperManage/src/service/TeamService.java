@@ -32,10 +32,12 @@ public class TeamService {
         if(isExist(p))
             throw new TeamException("该员工已在本团队中");
         //为其他团队开发人员或休假
-        if(p.getStatus().getNAME().equals("BUSY"))
-            throw new TeamException("该员工已为其他团队成员");
-        else if(p.getStatus().getNAME().equals("VOCATION"))
-            throw new TeamException("该员工正在休假，无法添加");
+        switch (p.getStatus()){
+            case BUSY:
+                throw new TeamException("该员工已为其他团队成员");
+            case VOCATION:
+                throw new TeamException("该员工正在休假，无法添加");
+        }
 
         int numOfArch = 0, numOfDsgn = 0, numOfPrg = 0;
         for (int i = 0; i < total; i++) {
