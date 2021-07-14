@@ -39,7 +39,7 @@ public class TeamView {
     private void listAllEmployees(){
         System.out.println("\n--------------------------开发调度软件------------------------");
         Employee[] employees = listSvc.getAllEmployees();
-        System.out.println("ID\t姓名\t年龄\t工\t职位\t状态\t奖金\t股票\t领用设备");
+        System.out.println("ID\t姓名\t年龄\t工资\t职位\t状态\t奖金\t股票\t领用设备");
         for(Employee e : employees)
             System.out.println(e);
         System.out.println("---------------------------------------------------------------");
