@@ -48,7 +48,7 @@ public class Employee {
         this.salary = salary;
     }
     protected String getDetails(){
-        return id + "\t" + name + "\t" + age + "\t" + salary;
+        return id + "\t" + name + "\t" + age + "\t\t" + salary;
     }
 
     @Override
